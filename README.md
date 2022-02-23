@@ -306,7 +306,7 @@ While working on this project I learned :
 
 ### Continued development
 
-I will continue next with a course from Coursera. I want to practice and improve my HTML5 and CSS3 skills and learn about Java Script and Responsive Design.
+I will continue next with a course from Coursera Web Design for Everybody: Basics of Web Development & Coding Specialization. I want to practice and improve my HTML5 and CSS3 skills and learn about Java Script and Responsive Design.
 
 ## Author
 
