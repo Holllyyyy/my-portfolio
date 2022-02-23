@@ -299,10 +299,10 @@ all pics n project tittle,n box shadow,border radius and so on */
 
 While working on this project I learned :
 
-- how to make nav bar and content of webpage using CSS Grid
 - how to set nav bar to be on top left of the viewport
 - to connect nav bar with all section when its being clicked
-- how to write some code inside paragraph, or any text.
+- how to write GRID template areas and use it
+- how to use animations
 
 ### Continued development
 
