@@ -1,420 +1,433 @@
-*{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
 } /*basics*/
 
-html,body{
-    min-height: 100vh;
-    width: 100%;
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+} /*basics*/
+img {
+  display: block;
+  width: 100%;
+} /*basic rule for img*/
 
-}/*basics*/
-img{
-   display: block;
-   width:100%;
-}/*basic rule for img*/
+nav {
+  background: #48adf1;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+} /*navigation, background color, width of 100% for whole width, postion 0 so whenever we scroll nav will be fixed on top*/
+nav > ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin-left: 3%;
+} /*nav here is parent and ul are children,so whats done here is just top right sections,i nav, with margin left who gives spaces, list-style-type none for no lists in nav bar*/
 
-nav{
-    background: #48ADF1;
-    width:100%;
-    height:80px;
-    display: flex;
-    align-items: center;
-    position: sticky; 
-    top:0;
-    z-index: 999;
-   
- 
-}/*navigation, background color, width of 100% for whole width, postion 0 so whenever we scroll nav will be fixed on top*/
-nav > ul{
-    width:100%;
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    margin-left:3%;
-}/*nav here is parent and ul are children,so whats done here is just top right sections,i nav, with margin left who gives spaces, list-style-type none for no lists in nav bar*/
-
-.nav-link{
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight:bolder;
-    text-transform: uppercase;
-    padding:2rem;
-    font-family:'Courier New', Courier, monospace;
-
-}/*nav link to be on display block, so will take one block for itself, n much easier later for style*/
-.nav-link:hover{
-    background-color: rgb(137, 119, 236);
-    cursor: pointer;
-    transition:2s linear;
-}/*hover for nav link so whenever we hover with mouse, will be changed color n transtion of 2 s*/
- #welcome-section {
-    width: 100%;
-    background: rgb(241,125,217);
-    background: radial-gradient(circle, rgba(241,125,217,1) 0%, rgba(255,217,242,1) 100%);
-    color:#035b96;
-    height:100vh;
-    text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 2rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-}/*this is the firt section, where is used gradient as a background color*/
-h1{
-    text-align: center;
-   
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2rem;
+  font-family: "Courier New", Courier, monospace;
+} /*nav link to be on display block, so will take one block for itself, n much easier later for style*/
+.nav-link:hover {
+  background-color: rgb(137, 119, 236);
+  cursor: pointer;
+  transition: 2s linear;
+} /*hover for nav link so whenever we hover with mouse, will be changed color n transtion of 2 s*/
+#welcome-section {
+  width: 100%;
+  background: rgb(241, 125, 217);
+  background: radial-gradient(
+    circle,
+    rgba(241, 125, 217, 1) 0%,
+    rgba(255, 217, 242, 1) 100%
+  );
+  color: #035b96;
+  height: 100vh;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+} /*this is the firt section, where is used gradient as a background color*/
+h1 {
+  text-align: center;
 } /*every h1 will be aligned on center*/
 
-.welcome-container{
-    display:grid;
-    height: 100%;
-    grid-template-columns:repeat(12,1fr) ;
-  
-    grid-template-areas: 
-    '. . b . . . . . . . . .'
-    '. . . . . . . . . c . .'
-    '. . . . . . . . . . . .'
-    '. . . . . . . . . . . .'
-    '. f . a a a a a a . . .'
-    '. . . . . g g g g g . o'
-    '. . . . . . . . . . . .'
-    '. . d . . . . . e . . .'
-    '. . . . . . . . . . . .'
-    '. . . . . . . . . . . .'
-    '. . . . . . . . . . . .'
-    '. . . . . . . . . . . .'
+.welcome-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(12, 1fr);
 
-
-    ;
-}/*in this container, is used grid, grid template columns repeat(12,1fr) so later in the grid-template-areas(gtas)
+  grid-template-areas:
+    ". . b . . . . . . . . ."
+    ". . . . . . . . . c . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". f . a a a a a a . . ."
+    ". . . . . g g g g g . o"
+    ". . . . . . . . . . . ."
+    ". . d . . . . . e . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . .";
+} /*in this container, is used grid, grid template columns repeat(12,1fr) so later in the grid-template-areas(gtas)
 , we need to write 12 times, for postining, here in this my gtas, are just how i want my welcome section to look like
 
 */
 
-.text{
-    grid-area:a;
+.text {
+  grid-area: a;
 }
-.textn{
-    grid-area:g;
+.textn {
+  grid-area: g;
 }
 
-.boxf{
-    height: 80px;
-    width:80px;
-    background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-    grid-area: f;
-    animation: top-bottom 3s infinite alternate linear;
-   
-}/*6 boxes are in this welcome section, i used animation, where always first is name what we can put whatever we want to, then sec, infinite 
+.boxf {
+  height: 80px;
+  width: 80px;
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  grid-area: f;
+  animation: top-bottom 3s infinite alternate linear;
+} /*6 boxes are in this welcome section, i used animation, where always first is name what we can put whatever we want to, then sec, infinite 
 saying dont stop keep going, keep moving*/
-@keyframes top-bottom{
-    from{
-        transform: translateY(0);
-    }
-    to{transform: translateY(300px);
-
-    }
-}/*to be able to use animation,we need keyframe with same name as we named earlier in our animation,and here is from place we wanna tart to other place
+@keyframes top-bottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(300px);
+  }
+} /*to be able to use animation,we need keyframe with same name as we named earlier in our animation,and here is from place we wanna tart to other place
 i use translateY cause I want them to move up down*/
 
-.boxs{
-    height: 80px;
-    width:80px;
-    background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-    grid-area: b;
-    animation: bottom-top 3s infinite alternate linear;
-
+.boxs {
+  height: 80px;
+  width: 80px;
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  grid-area: b;
+  animation: bottom-top 3s infinite alternate linear;
 }
-@keyframes bottom-top{
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(300px);
-    }
+@keyframes bottom-top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(300px);
+  }
 }
-.boxt{
-    height: 80px;
-    width:80px; 
-    background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-    grid-area: c;
-    animation: meow 3s infinite alternate linear;
-
-    
+.boxt {
+  height: 80px;
+  width: 80px;
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  grid-area: c;
+  animation: meow 3s infinite alternate linear;
 }
-@keyframes meow{
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(300px);
-    }
+@keyframes meow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(300px);
+  }
 }
-.boxft{
-    height: 80px;
-    width:80px;
-    background: rgb(118,50,63);
-    background: linear-gradient(0deg, rgba(118,50,63,1) 0%, rgba(215,206,199,1) 100%);;
-    grid-area: d;
-    animation: down-up 3s infinite alternate linear;
-    
+.boxft {
+  height: 80px;
+  width: 80px;
+  background: rgb(118, 50, 63);
+  background: linear-gradient(
+    0deg,
+    rgba(118, 50, 63, 1) 0%,
+    rgba(215, 206, 199, 1) 100%
+  );
+  grid-area: d;
+  animation: down-up 3s infinite alternate linear;
 }
 @keyframes down-up {
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(50px);
-    }
-    
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(50px);
+  }
 }
-.boxff{
-    height: 80px;
-    width:80px;
-    background: rgb(118,50,63);
-    background: linear-gradient(0deg, rgba(118,50,63,1) 0%, rgba(215,206,199,1) 100%);;
-    grid-area: e;
-    animation: sup 3s infinite alternate linear;
-  
+.boxff {
+  height: 80px;
+  width: 80px;
+  background: rgb(118, 50, 63);
+  background: linear-gradient(
+    0deg,
+    rgba(118, 50, 63, 1) 0%,
+    rgba(215, 206, 199, 1) 100%
+  );
+  grid-area: e;
+  animation: sup 3s infinite alternate linear;
 }
-@keyframes sup{
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(100px);
-    }
+@keyframes sup {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100px);
+  }
 }
-.boxfs{
-    height: 80px;
-    width:80px;
-    background: rgb(118,50,63);
-    background: linear-gradient(0deg, rgba(118,50,63,1) 0%, rgba(215,206,199,1) 100%);;
-    grid-area: o;
-    animation: lp 3s infinite alternate linear;
-  
+.boxfs {
+  height: 80px;
+  width: 80px;
+  background: rgb(118, 50, 63);
+  background: linear-gradient(
+    0deg,
+    rgba(118, 50, 63, 1) 0%,
+    rgba(215, 206, 199, 1) 100%
+  );
+  grid-area: o;
+  animation: lp 3s infinite alternate linear;
 }
-@keyframes lp{
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(200px);
-    }
+@keyframes lp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(200px);
+  }
 }
 
-
-#projects{
-    width:100%;
-    display: grid;
-    background-color: #ffffff;
-}/*use of grid, for section projects*/
-.project-tile{
-    animation: left-right 4s alternate ease-in-out;
-    margin-top: 4%;
-    color:#48ADF1;
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform:uppercase ;
-    font-family:'Courier New', Courier, monospace;
-}/* here is project title, where is used animation to go right n back, when we reload page*/
-@keyframes left-right{
-    from{ 
-        transform: translateX(0);
-
-    }
-    to{
-        transform: translateX(200px);
-    }
+#projects {
+  width: 100%;
+  display: grid;
+  background-color: #ffffff;
+} /*use of grid, for section projects*/
+.project-tile {
+  animation: left-right 4s alternate ease-in-out;
+  margin-top: 4%;
+  color: #289eec;
+  font-size: 35px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+} /* here is project title, where is used animation to go right n back, when we reload page*/
+@keyframes left-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
 }
 /*here, is translateX, whats giving other direction then earlier, n goes right n back*/
 
-.wrapper> figure> img{
-    width:100%;
-    height:100%;
-    object-fit: cover;
-    animation: right-left 4s alternate ease-out;
-    box-shadow: 5px 10px 18px #48ADF1;
-    -moz-box-shadow:5px 10px 18px #48ADF1;
-    -webkit-box-shadow:5px 10px 18px #48ADF1;
+.wrapper > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: right-left 4s alternate ease-out;
+  box-shadow: 5px 10px 18px #48adf1;
+  -moz-box-shadow: 5px 10px 18px #48adf1;
+  -webkit-box-shadow: 5px 10px 18px #48adf1;
 
-    border: 1px solid #48ADF1;
-    border-radius:20px 20px 0 0;
+  border: 1px solid #48adf1;
+  border-radius: 20px 20px 0 0;
 
-    -moz-border-radius:20px 20px 0 0 ;
-    -o-border-radius:20px 20px 0 0;
-    -webkit-border-radious:20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  -o-border-radius: 20px 20px 0 0;
+  -webkit-border-radious: 20px 20px 0 0;
 }
 /*this is pictures of projects , where is used also animation, a little box-shadows, border-radius and so on, width n height is 100% cause img is child of wrapper*/
 
 @keyframes right-left {
-    from{
-        transform: translateX(0);
-    }
-    to{
-       transform: translateX(150px);
-    }
-    
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150px);
+  }
 }
 
-
-
-.wrapper{
-    display: grid;
-    grid-gap: 4rem;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    width: 100%;
-    max-width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-bottom: 6rem;
-}/*this is display grid on 5 pic i put there, with grid template columns repeat auto-fit,minmax(.,.) where without auto-fit n minmax would not be 
+.wrapper {
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  width: 100%;
+  max-width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+} /*this is display grid on 5 pic i put there, with grid template columns repeat auto-fit,minmax(.,.) where without auto-fit n minmax would not be 
 able to get what i wanted at first, with margin of 0 auto, i centered all pics on mid,grid gap i made space between them*/
-figcaption{
-    text-align:center;
-    width:100%;
-    height: 20px;
-    background-color: #48ADF1;
-    display: block;
-    animation: right-left 4s alternate ease-out;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    box-shadow: 5px 10px 18px #48ADF1;
-    border: 1px solid #48ADF1;
-    border-radius:0 0 20px 20px ;
-    -moz-border-radius:0 0 20px 20px ;
-    -o-border-radius:0 0 20px 20px ;
-    -webkit-border-radious:0 0 20px 20px;
-}/*figcaption desribe what is on pics, width of 100% n centered just for a better look, so lil heigh, also animation here,as 
+figcaption {
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  background-color: #48adf1;
+  display: block;
+  animation: right-left 4s alternate ease-out;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 5px 10px 18px #48adf1;
+  border: 1px solid #48adf1;
+  border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -o-border-radius: 0 0 20px 20px;
+  -webkit-border-radious: 0 0 20px 20px;
+} /*figcaption desribe what is on pics, width of 100% n centered just for a better look, so lil heigh, also animation here,as 
 all pics n project tittle,n box shadow,border radius and so on */
-figcaption:hover{
-    background-color: #69bff8;
-    transition: 2s linear;
+figcaption:hover {
+  background-color: #69bff8;
+  transition: 2s linear;
 }
 
-.a{
-    text-align: center;
-    text-decoration: none;
-    color:#000000;   
+.a {
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
 }
-a{
-    text-decoration:none;
-    color:#000000;
-   
+a {
+  text-decoration: none;
+  color: #000000;
 }
-#contact{
-    margin-top: -3%;
-    width:100%;
-    background-color: #FDCBFC;
+#contact {
+  margin-top: -3%;
+  width: 100%;
+  background-color: #fdcbfc;
 }
-.contact-section{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   text-align:center;
-   width:100%;
-   height: 80vh;
-   font-size: 2rem;
-   font-family: 'Courier New', Courier, monospace;
-   font-weight: bold;
-   color: #084063;
-
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: #084063;
 }
 
-.contact-container{
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -80px;
+}
+.contact-container > .contact:hover {
+  background-color: rgb(137, 119, 236);
+
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -o-border-radius: 25px;
+  -webkit-border-radious: 25px;
+  transition: 2s linear;
+}
+
+.project-tile {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid #48adf1;
+}
+.contact {
+  margin-left: 3%;
+}
+.contact-container > .contact {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #000000;
+  margin-bottom: 4%;
+}
+.contact-container > .contact > .profile-link {
+  color: #0e283a;
+  margin-right: 55px;
+}
+.contact > .profile-link {
+  margin-left: 4%;
+}
+.headtext {
+  border-bottom: none;
+}
+footer {
+  background: #48adf1;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 900;
+  color: #0a0042;
+}
+
+@media screen and (max-width: 400px) {
+  nav {
+    top: 0;
+    position: sticky;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top:-80px;
-   
-  
-}
-.contact-container > .contact:hover{
-   background-color: rgb(137, 119, 236);
-    
-    border-radius: 25px;
-    -moz-border-radius:25px;
-    -o-border-radius:25px;
-    -webkit-border-radious:25px;
-    transition:2s linear ;
-}
-
-
-
-h2{
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 6rem auto;
-    border-bottom: 0.2rem solid #48ADF1;
-}
-.contact{
-    margin-left: 3%;
- 
-    
-}
-.contact-container> .contact{
-    
-    font-size: 1rem;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    text-align:center;
     align-items: center;
-    color: #000000;
-    margin-bottom: 4%;
-   
-}
-.contact-container> .contact > .profile-link{
-    
-    color: #0e283a;
-    margin-right:55px;
-    
-}
-.contact>.profile-link{
-    margin-left:4%;
-}
-.headtext{
-    border-bottom: none;
-}
-footer{
-    background: #48ADF1;
-    width:100%;
-    height:80px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    color:#ffffff   ;
-
-}
-
-@media only screen and (max-width:400px){ 
- nav{
-     top:0;
-    position: sticky; 
-    display: flex;
-   justify-content: center;
-   align-items: center;
- }
- body{
-     background-color: #ffffff;
- }
-    
-}
-@media only screen and (min-width:768px){ 
-    nav{
-        top:0;
-       position: sticky;   
-    }
-    
-}
-@media only screen and (min-width:600px){ 
-    nav{
-        top:0;
-       position: sticky;   
-    }
-    
+  }
+  body {
+    background-color: #ffffff;
+  }
 }
